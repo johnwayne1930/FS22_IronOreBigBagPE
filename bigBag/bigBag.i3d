@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="bigBag" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.3"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="bigBagIronOre_diffuse.dds"/>
+    <File fileId="5" filename="$data/objects/bigBag/bigBagOutput_normal.png"/>
+    <File fileId="6" filename="$data/objects/bigBag/bigBagOutput_vmask.png"/>
+    <File fileId="3" filename="$data/objects/bigBag/bigBag_normal.png"/>
+    <File fileId="4" filename="$data/objects/bigBag/bigBag_specular.png"/>
+    <File fileId="7" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="11" filename="$data/shared/default_normal.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="ironOre_mat" materialId="4">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="bigBagOutput_mat" materialId="5" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="7" customShaderVariation="colorMask">
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.0143105 0.0846415 0.315763 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="default_mat" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+      <Normalmap fileId="11"/>
+    </Material>
+    <Material name="lambert1" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="bigBag.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="bigBag_main_component1" dynamic="true" compound="true" collisionMask="2109442" clipDistance="300" nodeId="28" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true">
+        <TransformGroup name="functionalNodes" nodeId="29">
+          <TransformGroup name="raycastNode" translation="0 -1.11022e-16 0" nodeId="30"/>
+          <Shape shapeId="2" name="fillTrigger" translation="0 1.99948 0" visibility="false" kinematic="true" compound="true" trigger="true" collisionMask="1073741824" clipDistance="300" nodeId="31" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="3" name="dischargeActivationTrigger" translation="0 -1.79605 0" visibility="false" kinematic="true" compound="true" trigger="true" collisionMask="1073741824" nodeId="32" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="4" name="tensionBeltMesh02" translation="0 0.522743 0" visibility="false" nodeId="33" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <TransformGroup name="visuals" nodeId="34">
+          <Shape shapeId="5" name="bigBag_vis" clipDistance="200" nodeId="35" materialIds="4" castsShadows="true" receiveShadows="true" skinBindNodeIds="63 54 53 51 52 56 57 55 50 36">
+            <TransformGroup name="bottom" nodeId="36"/>
+          </Shape>
+          <TransformGroup name="outputParts" nodeId="37">
+            <Shape shapeId="6" name="outputOpen" translation="8.63215e-09 -0.013077 1.42092e-05" clipDistance="300" nodeId="38" materialIds="5" castsShadows="true" receiveShadows="true">
+              <TransformGroup name="effects" translation="-8.63215e-09 0.013077 -1.42092e-05" nodeId="39">
+                <Shape shapeId="7" name="pipeEffect" translation="0 -0.131026 2.90937e-17" rotation="90 0 0" clipDistance="100" nodeId="40" materialIds="6" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="8" name="smokeEffect" translation="0 -2.18029 0" visibility="false" clipDistance="100" nodeId="41" materialIds="6" castsShadows="true" receiveShadows="true"/>
+              </TransformGroup>
+            </Shape>
+            <Shape shapeId="9" name="outputClose" translation="8.63215e-09 -0.013077 1.42092e-05" clipDistance="300" nodeId="42" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+          <TransformGroup name="materialHolders" visibility="false" nodeId="43">
+            <Shape shapeId="10" name="ironOre_mat" clipDistance="300" nodeId="44" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="collisions" visibility="false" nodeId="45">
+          <Shape shapeId="11" name="sizeCollision01" translation="-0.25 3.33786e-08 -0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="46" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="12" name="sizeCollision02" translation="0.25 3.33786e-08 -0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="47" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="13" name="sizeCollision03" translation="0.25 3.33786e-08 0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="48" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="14" name="sizeCollision04" translation="-0.25 3.33786e-08 0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="49" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <TransformGroup name="sizeJoint01" translation="-0.405302 0 -0.304" visibility="false" nodeId="50"/>
+          <TransformGroup name="sizeJoint02" translation="0.405 0 -0.304" visibility="false" nodeId="51"/>
+          <TransformGroup name="sizeJoint03" translation="0.405 0 0.304" visibility="false" nodeId="52"/>
+          <TransformGroup name="sizeJoint04" translation="-0.405 0 0.304" visibility="false" nodeId="53"/>
+          <TransformGroup name="sizeJoint05" translation="-0.449857 0 0" visibility="false" nodeId="54"/>
+          <TransformGroup name="sizeJoint06" translation="0.45 0 0" visibility="false" nodeId="55"/>
+          <TransformGroup name="sizeJoint07" translation="0 0 0.38" visibility="false" nodeId="56"/>
+          <TransformGroup name="sizeJoint08" translation="0 0 -0.38" visibility="false" nodeId="57"/>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="15" name="bigBag_hook_component2" translation="0 1.37171 0" dynamic="true" compound="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" clipDistance="300" nodeId="58" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true">
+        <TransformGroup name="componentJointHook" rotation="0 0 -90" nodeId="59"/>
+        <TransformGroup name="attacherJoint01" translation="4.26959e-09 0.319841 2.80471e-17" rotation="90 0 -90" nodeId="60"/>
+        <TransformGroup name="attacherJoint02" translation="4.26959e-09 0.319841 2.80471e-17" rotation="-90 3.18055e-15 -90" nodeId="61"/>
+        <Shape shapeId="16" name="tensionBeltMesh01" translation="0 0.188114 0" visibility="false" nodeId="62" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="rootJoint" nodeId="63"/>
+        <Shape shapeId="17" name="colPart01" translation="0.15505 0.211707 0" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="64" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="18" name="colPart02" translation="-0.15505 0.211707 0" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="65" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="19" name="colPart03" translation="0 0.3841 0.034738" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="66" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="19" name="colPart04" translation="0 0.3841 -0.034738" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="67" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="36">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="50">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="51">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="52">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="53">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="54">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="55">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="56">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="57">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="63">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="72">
+	<author>johnwayne1930</author>
+		<!-- <coauthor></coauthor> -->
+	<version>1.0.0.0</version>
+	
+	<title>
+		<en>Iron Ore BigBag</en>
+		<de>Eisenerz BigBag</de>
+	</title>
+	
+	<description>
+	<en><![CDATA[
+There is no local iron ore mine in your area? Just import the ore in handy BigBags from your local dealer!
+FS22 Platinum Expansion is required.
+
+BigBag and BigBag-Pallet
+Price: 100€
+Capacity: 1,000L
+]]></en>
+	<de><![CDATA[
+Es gibt keine lokale Eisenerzmine in Ihrer Nähe? Importieren Sie das Erz einfach in handlichen BigBags von Ihrem Händler vor Ort!
+FS22 Platinum Expansion wird benötigt.
+
+BigBag und BigBag-Palette
+Preis: 100€
+Kapazität: 1.000L
+]]></de>
+	</description>
+
+    <!-- <l10n filenamePrefix="localization/l10n"/> -->
+
+	<l10n>
+		<text name="ShopItem_bigBagIronOre">
+			<en>Iron Ore</en>
+			<de>Eisenerz</de>
+		</text>
+		<text name="function_bigBagIronOre">
+			<en>A bigbag of iron ore for production. Can be loaded into a suitable trailer.</en>
+			<de>Ein BigBag mit Eisenerz für die Produktion. Kann in einen passenden Anhänger überladen werden.</de>
+		</text>
+	</l10n>
+
+	<dependencies>
+		<dependency>pdlc_forestryPack</dependency>
+	</dependencies>	
+	
+	<iconFilename>icon_ironOreBigBag.dds</iconFilename>
+	<multiplayer supported="true"/>
+	
+	<storeItems>
+		<storeItem xmlFilename="bigBag/multiPurchaseBigBag_ironOre.xml"/>
+		<storeItem xmlFilename="bigBag/bigBag_ironOre.xml"/>
+		<storeItem xmlFilename="bigBagPallet/multiPurchaseBigBagPallet_ironOre.xml"/>
+		<storeItem xmlFilename="bigBagPallet/bigBagPallet_ironOre.xml"/>
+
+	</storeItems>
+</modDesc>
