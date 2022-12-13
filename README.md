@@ -1,15 +1,22 @@
-# FS22_IronOreBigBag v1.0.0.0
+# FS22_IronOreBigBagPE v1.0.0.0
 Mod for Farming Simulator 22 
 
 #### Description
-There is no local iron ore mine in your area? Just import the ore in handy BigBags from your local dealer!  
-FS22 Platinum Expansion is required. 
+Purchasable BigBags and BigBag pallets with stones as raw material for productions with corresponding input or the rock crusher.  
+ATTENTION: If a corresponding mod or DLC (e.g. Platinum Expansion) is activated and uses the fillType ironOre, iron ore BigBags and BigBag pallets that can also be bought are added.  
+These can be used as raw material for productions with the appropriate input, e.g. an iron furnace.  
+  
+This mod requires FS22_A_ProductionRevamp.
 
 #### Installation manually:
 * download [Latest release](https://github.com/johnwayne1930/FS22_IronOreBigBag/releases/latest)
 * put the ZIP file "FS22_IronOreBigBag.zip" in the  
 _%\Documents\My Games\FarmingSimulator2022\mods_ directory
-* activate the mod ingame
+* download the mandatory [Production Revamp (Braeven)](https://farming-simulator.com/mod.php?mod_id=243542)
+* put the "FS22_A_ProductionRevamp.zip" in the mods directory as well (do not rename the ZIP!)
+* activate both mods ingame
 
 #### Installation ModHub:
-* this Mod is not available in ModHub
+* download both [Production Revamp (Braeven)](https://farming-simulator.com/mod.php?mod_id=243542) and  
+[Mineral Raw Material BigBags (johnwayne1930)](https://farming-simulator.com/mod.php?&mod_id=260464) from the ingame Modhub
+* activate both mods ingame
