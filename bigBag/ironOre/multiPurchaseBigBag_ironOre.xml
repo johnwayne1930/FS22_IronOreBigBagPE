@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="multipleItemPurchase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../shared/xml/schema/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>$l10n_ShopItem_bigBagIronOre</name>
+        <specs>
+            <weight ignore="true"/>
+        </specs>
+        <functions>
+            <function>$l10n_function_bigBagIronOre</function>
+        </functions>
+        <image>bigBag/ironOre/store_bigBag_ironOre.png</image>
+        <price>1800</price>
+        <lifetime>600</lifetime>
+        <allowLeasing>false</allowLeasing>
+        <canBeSold>false</canBeSold>
+        <rotation>0</rotation>
+        <brand>LIZARD</brand>
+        <category>bigbags</category>
+        <financeCategory>OTHER</financeCategory>
+        <shopLoadingDelay initial="0.2" config="0.2"/>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_fillType_ironOre</typeDesc>
+        <filename>$data/objects/buyableBales/buyableBale.i3d</filename>
+        <size width="4" length="4" />
+        <components>
+            <component centerOfMass="0 0 0" solverIterationCount="10" mass="100"/>
+        </components>
+    </base>
+
+    <fillUnit>
+        <fillUnitConfigurations>
+            <fillUnitConfiguration>
+                <fillUnits>
+                    <fillUnit fillTypes="IRONORE" capacity="1000" />
+                </fillUnits>
+            </fillUnitConfiguration>
+        </fillUnitConfigurations>
+    </fillUnit>
+
+    <multipleItemPurchase filename="bigBag/ironOre/bigBag_ironOre.xml" isVehicle="true">
+        <offsets>
+            <offset amount="2" offset="0.5 0 0"/>
+            <offset amount="3" offset="0.5 0 0.425"/>
+            <offset amount="5" offset="0.5 0 0.850"/>
+            <offset amount="7" offset="0.5 0 1.275"/>
+        </offsets>
+        <itemPositions>
+            <itemPosition position="0 0 0" rotation="0 0 0"/>
+            <itemPosition position="-1 0 0" rotation="0 0 0"/>
+            <itemPosition position="0 0 -0.85" rotation="0 0 0"/>
+            <itemPosition position="-1 0 -0.85" rotation="0 0 0"/>
+
+            <itemPosition position="0 0 -1.7" rotation="0 0 0"/>
+            <itemPosition position="-1 0 -1.7" rotation="0 0 0"/>
+            <itemPosition position="0 0 -2.55" rotation="0 0 0"/>
+            <itemPosition position="-1 0 -2.55" rotation="0 0 0"/>
+        </itemPositions>
+    </multipleItemPurchase>
+
+    <multipleItemPurchaseAmountConfigurations>
+        <multipleItemPurchaseAmountConfiguration name="1" price="0"/>
+        <multipleItemPurchaseAmountConfiguration name="2" price="1800"/>
+        <multipleItemPurchaseAmountConfiguration name="3" price="3600"/>
+        <multipleItemPurchaseAmountConfiguration name="4" price="5400"/>
+        <multipleItemPurchaseAmountConfiguration name="5" price="7200"/>
+        <multipleItemPurchaseAmountConfiguration name="6" price="9000"/>
+        <multipleItemPurchaseAmountConfiguration name="7" price="10800"/>
+        <multipleItemPurchaseAmountConfiguration name="8" price="12600"/>
+    </multipleItemPurchaseAmountConfigurations>
+
+</vehicle>

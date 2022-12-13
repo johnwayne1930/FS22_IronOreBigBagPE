@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<l10n>
+    <!-- <translationContributors></translationContributors> -->
+    <texts>
+        <text name="ShopItem_bigBagIronOre" text="Eisenerz" />
+        <text name="function_bigBagIronOre" text="Ein BigBag mit Eisenerz für die Produktion. Kann in einen passenden Anhänger überladen werden." />
+        <text name="function_bigBagStone" text="Ein BigBag mit Steinen für die Produktion. Kann in einen passenden Anhänger überladen werden." />
+    </texts>
+</l10n>

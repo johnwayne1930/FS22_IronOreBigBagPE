@@ -1,58 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="72">
 	<author>johnwayne1930</author>
-		<!-- <coauthor></coauthor> -->
 	<version>1.0.0.0</version>
 	
 	<title>
-		<en>Iron Ore BigBag</en>
-		<de>Eisenerz BigBag</de>
+		<en>Mineral Raw Material BigBags</en>
+		<de>Mineralische Rohstoff BigBags</de>
 	</title>
 	
 	<description>
 	<en><![CDATA[
-There is no local iron ore mine in your area? Just import the ore in handy BigBags from your local dealer!
-FS22 Platinum Expansion is required.
+Purchasable BigBags and BigBag pallets with stones as raw material for productions with corresponding input or the rock crusher.
+ATTENTION: If a corresponding mod or DLC (e.g. Platinum Expansion) is activated and uses the fillType ironOre, iron ore BigBags and BigBag pallets that can also be bought are added.
+These can be used as raw material for productions with the appropriate input, e.g. an iron furnace.
 
-BigBag and BigBag-Pallet
-Price: 100€
+This mod requires FS22_A_ProductionRevamp.
+
+Stone BigBag and BigBag-Pallet
+Price: 100$
+Capacity: 1,000L
+
+Iron Ore BigBag and BigBag-Pallet
+Price: 1800$
 Capacity: 1,000L
 ]]></en>
 	<de><![CDATA[
-Es gibt keine lokale Eisenerzmine in Ihrer Nähe? Importieren Sie das Erz einfach in handlichen BigBags von Ihrem Händler vor Ort!
-FS22 Platinum Expansion wird benötigt.
+Kaufbare BigBags sowie BigBag Paletten mit Steinen als Rohstoff für Produktionen mit entsprechendem Input oder den Gesteinsbrecher.
+ACHTUNG: Wenn ein entsprechender Mod oder DLC (zb. Platinum Expansion) aktiviert ist und den fillType ironOre verwendet, werden zusätzlich kaufbare Eisenerz BigBags und BigBag Paletten hinzugefügt.
+Diese können als Rohstoff für Produktionen mit entsprechendem Input verwendet werden, zb. ein Eisenschmelzofen.
 
-BigBag und BigBag-Palette
+Dieser Mod benötigt FS22_A_ProductionRevamp.
+
+Stein BigBag und BigBag-Palette
 Preis: 100€
+Kapazität: 1.000L
+
+Eisenerz BigBag und BigBag-Palette
+Preis: 1800€
 Kapazität: 1.000L
 ]]></de>
 	</description>
 
-    <!-- <l10n filenamePrefix="localization/l10n"/> -->
-
-	<l10n>
-		<text name="ShopItem_bigBagIronOre">
-			<en>Iron Ore</en>
-			<de>Eisenerz</de>
-		</text>
-		<text name="function_bigBagIronOre">
-			<en>A bigbag of iron ore for production. Can be loaded into a suitable trailer.</en>
-			<de>Ein BigBag mit Eisenerz für die Produktion. Kann in einen passenden Anhänger überladen werden.</de>
-		</text>
-	</l10n>
-
 	<dependencies>
-		<dependency>pdlc_forestryPack</dependency>
+		<dependency>FS22_A_ProductionRevamp</dependency>
 	</dependencies>	
 	
+	<extraSourceFiles>
+		<sourceFile filename="scripts/revamp_check.lua"/>
+	</extraSourceFiles>	
+
 	<iconFilename>icon_ironOreBigBag.dds</iconFilename>
 	<multiplayer supported="true"/>
 	
 	<storeItems>
-		<storeItem xmlFilename="bigBag/multiPurchaseBigBag_ironOre.xml"/>
-		<storeItem xmlFilename="bigBag/bigBag_ironOre.xml"/>
-		<storeItem xmlFilename="bigBagPallet/multiPurchaseBigBagPallet_ironOre.xml"/>
-		<storeItem xmlFilename="bigBagPallet/bigBagPallet_ironOre.xml"/>
-
+		<storeItem xmlFilename="bigBag/stones/multiPurchaseBigBag_stone.xml"/>
+		<storeItem xmlFilename="bigBag/stones/bigBag_stone.xml"/>
+		<storeItem xmlFilename="bigBagPallet/stones/multiPurchaseBigBagPallet_stone.xml"/>
+		<storeItem xmlFilename="bigBagPallet/stones/bigBagPallet_stone.xml"/>
 	</storeItems>
+	
+    <revamp minVersion="1.3.5.5">
+		<storeItems>
+			<storeItem xmlFilename="bigBag/ironOre/multiPurchaseBigBag_ironOre.xml" addWhenfillTypes="IRONORE"/>
+			<storeItem xmlFilename="bigBag/ironOre/bigBag_ironOre.xml" addWhenfillTypes="IRONORE"/>
+			<storeItem xmlFilename="bigBagPallet/ironOre/multiPurchaseBigBagPallet_ironOre.xml" addWhenfillTypes="IRONORE"/>
+			<storeItem xmlFilename="bigBagPallet/ironOre/bigBagPallet_ironOre.xml" addWhenfillTypes="IRONORE"/>
+		</storeItems>
+	</revamp>
+
+    <l10n filenamePrefix="localization/l10n"/>
+	
 </modDesc>

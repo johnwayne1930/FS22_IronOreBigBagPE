@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<l10n>
+    <!-- <translationContributors></translationContributors> -->
+    <texts>
+        <text name="ShopItem_bigBagIronOre" text="Iron Ore" />
+        <text name="function_bigBagIronOre" text="A bigbag of iron ore for production. Can be loaded into a suitable trailer." />
+        <text name="function_bigBagStone" text="A bigbag of stones for production. Can be loaded into a suitable trailer." />
+    </texts>
+</l10n>

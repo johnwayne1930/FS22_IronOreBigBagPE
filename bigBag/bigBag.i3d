@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="bigBag" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.3"/>
+  </Asset>
+
+  <Files>
+    <File fileId="5" filename="$data/objects/bigBag/bigBagOutput_normal.png"/>
+    <File fileId="6" filename="$data/objects/bigBag/bigBagOutput_vmask.png"/>
+    <File fileId="3" filename="$data/objects/bigBag/bigBag_normal.png"/>
+    <File fileId="4" filename="$data/objects/bigBag/bigBag_specular.png"/>
+    <File fileId="2" filename="$data/objects/bigBag/stones/bigBagStones_diffuse.dds"/>
+    <File fileId="7" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="11" filename="$data/shared/default_normal.png"/>
+    <File fileId="12" filename="ironOre/bigBagIronOre_diffuse.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="bigBagIronOre_mat" materialId="6">
+      <Texture fileId="12"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="bigBagOutput_mat" materialId="5" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="7" customShaderVariation="colorMask">
+      <Normalmap fileId="5"/>
+      <Glossmap fileId="6"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="1 0.47 0.03 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="bigBagStone_mat" materialId="4">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="default_mat" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1">
+      <Normalmap fileId="11"/>
+    </Material>
+    <Material name="lambert1" materialId="8" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="bigBag.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <Shape shapeId="1" name="bigBag_main_component1" dynamic="true" compound="true" collisionMask="2109442" clipDistance="300" nodeId="29" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true">
+        <TransformGroup name="functionalNodes" nodeId="30">
+          <TransformGroup name="raycastNode" nodeId="31"/>
+          <Shape shapeId="2" name="fillTrigger" translation="0 1.99948 0" visibility="false" kinematic="true" compound="true" trigger="true" collisionMask="1073741824" clipDistance="300" nodeId="32" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="3" name="dischargeActivationTrigger" translation="0 -1.79605 0" visibility="false" kinematic="true" compound="true" trigger="true" collisionMask="1073741824" nodeId="33" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="4" name="tensionBeltMesh02" translation="0 0.522743 0" visibility="false" nodeId="34" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <TransformGroup name="visuals" nodeId="35">
+          <Shape shapeId="5" name="bigBag_vis" clipDistance="200" nodeId="36" materialIds="4" castsShadows="true" receiveShadows="true" skinBindNodeIds="65 56 55 53 54 58 59 57 52 37">
+            <TransformGroup name="bottom" nodeId="37"/>
+          </Shape>
+          <TransformGroup name="outputParts" nodeId="38">
+            <Shape shapeId="6" name="outputOpen" translation="0 -0.013077 1.4e-05" clipDistance="300" nodeId="39" materialIds="5" castsShadows="true" receiveShadows="true">
+              <TransformGroup name="effects" translation="-0 0.013077 -1.4e-05" nodeId="40">
+                <Shape shapeId="7" name="pipeEffect" translation="0 -0.131026 0" rotation="90 0 0" clipDistance="100" nodeId="41" materialIds="7" castsShadows="true" receiveShadows="true"/>
+                <Shape shapeId="8" name="smokeEffect" translation="0 -2.18029 0" visibility="false" clipDistance="100" nodeId="42" materialIds="7" castsShadows="true" receiveShadows="true"/>
+              </TransformGroup>
+            </Shape>
+            <Shape shapeId="9" name="outputClose" translation="0 -0.013077 1.4e-05" clipDistance="300" nodeId="43" materialIds="5" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+          <TransformGroup name="materialHolders" visibility="false" nodeId="44">
+            <Shape shapeId="10" name="ironOre_mat" clipDistance="300" nodeId="45" materialIds="6" castsShadows="true" receiveShadows="true"/>
+            <Shape shapeId="10" name="stone_mat" clipDistance="300" nodeId="46" materialIds="4" castsShadows="true" receiveShadows="true"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="collisions" visibility="false" nodeId="47">
+          <Shape shapeId="11" name="sizeCollision01" translation="-0.25 0 -0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="48" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="12" name="sizeCollision02" translation="0.25 0 -0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="49" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="13" name="sizeCollision03" translation="0.25 0 0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="50" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="14" name="sizeCollision04" translation="-0.25 0 0.25" compoundChild="true" collisionMask="2109442" density="0.001" nodeId="51" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <TransformGroup name="sizeJoint01" translation="-0.405302 0 -0.304" visibility="false" nodeId="52"/>
+          <TransformGroup name="sizeJoint02" translation="0.405 0 -0.304" visibility="false" nodeId="53"/>
+          <TransformGroup name="sizeJoint03" translation="0.405 0 0.304" visibility="false" nodeId="54"/>
+          <TransformGroup name="sizeJoint04" translation="-0.405 0 0.304" visibility="false" nodeId="55"/>
+          <TransformGroup name="sizeJoint05" translation="-0.449857 0 0" visibility="false" nodeId="56"/>
+          <TransformGroup name="sizeJoint06" translation="0.45 0 0" visibility="false" nodeId="57"/>
+          <TransformGroup name="sizeJoint07" translation="0 0 0.38" visibility="false" nodeId="58"/>
+          <TransformGroup name="sizeJoint08" translation="0 0 -0.38" visibility="false" nodeId="59"/>
+        </TransformGroup>
+      </Shape>
+      <Shape shapeId="15" name="bigBag_hook_component2" translation="0 1.37171 0" dynamic="true" compound="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" clipDistance="300" nodeId="60" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true">
+        <TransformGroup name="componentJointHook" rotation="0 0 -90" nodeId="61"/>
+        <TransformGroup name="attacherJoint01" translation="0 0.319841 0" rotation="90 0 -90" nodeId="62"/>
+        <TransformGroup name="attacherJoint02" translation="0 0.319841 0" rotation="-90 0 -90" nodeId="63"/>
+        <Shape shapeId="16" name="tensionBeltMesh01" translation="0 0.188114 0" visibility="false" nodeId="64" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="rootJoint" nodeId="65"/>
+        <Shape shapeId="17" name="colPart01" translation="0.15505 0.211707 0" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="66" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="18" name="colPart02" translation="-0.15505 0.211707 0" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="67" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="19" name="colPart03" translation="0 0.3841 0.034738" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="68" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="19" name="colPart04" translation="0 0.3841 -0.034738" visibility="false" compoundChild="true" collisionMask="2109442" staticFriction="0.1" dynamicFriction="0.4" angularDamping="0.2" density="0.3" nodeId="69" materialIds="8" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+      </Shape>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="37">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="52">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="53">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="54">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="55">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="56">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="57">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="58">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="59">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+    <UserAttribute nodeId="65">
+      <Attribute name="liw" type="boolean" value="false"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>
